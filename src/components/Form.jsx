@@ -5,7 +5,6 @@ export default function Form({ tasks, setTasks }) {
     name: "",
     done: false,
   });
-  console.log("asdasd", tasks);
   return (
     <div>
       <form className={styles.todoform} onSubmit={(e) => submit(e)}>
@@ -32,5 +31,7 @@ export default function Form({ tasks, setTasks }) {
     e.preventDefault();
     setTasks([...tasks, task]);
     setTask({ name: "", done: false });
+    console.log(tasks);
+    localStorage.setItem("tasks", JSON.stringify(task));
   }
 }

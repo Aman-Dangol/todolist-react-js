@@ -12,7 +12,6 @@ export default function Todoitem({ item, tasks, setTasks }) {
         return task;
       })
     );
-    console.log("updated", tasks);
   }
   const className = item.done ? styles.completed : "";
   return (
