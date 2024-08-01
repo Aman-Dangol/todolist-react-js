@@ -3,10 +3,29 @@ export default function Todoitem({ item, tasks, setTasks }) {
   function handleDelete(item) {
     setTasks(tasks.filter((deleteItem) => item != deleteItem));
   }
+  function toggle(item) {
+    setTasks(
+      tasks.map((task) => {
+        if (task.name == item.name) {
+          return { ...task, done: !task.done };
+        }
+        return task;
+      })
+    );
+    console.log("updated", tasks);
+  }
+  const className = item.done ? styles.completed : "";
   return (
     <div className={styles.item}>
       <div className={styles.itemname}>
-        {item}{" "}
+        <span
+          className={className}
+          onClick={() => {
+            toggle(item);
+          }}
+        >
+          {item.name}
+        </span>
         <span>
           <button
             onClick={() => {
