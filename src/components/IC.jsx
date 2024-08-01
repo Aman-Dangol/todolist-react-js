@@ -1,10 +1,5 @@
-import "../css/style.css";
-
-const header = {
-  color: "blue",
-  fontSize: "140px",
-};
+import styles from "./IC.module.css";
 
 export default function InlineComponent() {
-  return <h1 className="header">inline componenet</h1>;
+  return <h1 className={styles.header}>inline componenet</h1>;
 }
