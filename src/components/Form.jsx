@@ -1,16 +1,14 @@
 import { useState } from "react";
-import Todoitem from "./Todoitem";
-export default function Form() {
+export default function Form({ tasks, setTasks }) {
   const [task, setTask] = useState("");
-  const [tasks, setTasks] = useState([]);
+  console.log("asdasd", tasks);
   return (
-    <form onSubmit={(e) => submit(e)}>
-      <input type="text" value={task} onChange={(e) => inputData(e)} />
-      <button>add</button>
-      {tasks.map((item) => (
-        <Todoitem key={item} item={item} />
-      ))}
-    </form>
+    <div>
+      <form onSubmit={(e) => submit(e)}>
+        <input type="text" value={task} onChange={(e) => inputData(e)} />
+        <button>add</button>
+      </form>
+    </div>
   );
 
   function inputData(e) {

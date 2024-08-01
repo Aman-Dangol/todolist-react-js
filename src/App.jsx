@@ -1,12 +1,12 @@
 import Form from "./components/Form";
-import InlineComponent from "./components/IC";
-import OutlineComponent from "./components/OutlineComponent";
+import Header from "./components/Header";
+import "./App.css";
+import Todo from "./components/Todo";
 export default function App() {
   return (
-    <div>
-      {/* <Form></Form> */}
-      <InlineComponent />
-      <OutlineComponent />
+    <div className="App">
+      <Header />
+      <Todo></Todo>
     </div>
   );
 }
